@@ -6,22 +6,20 @@
 
 int main(void)
 {
-    int num = 10;
-    Animal** arr = new Animal*[num];
-    for (int ind = 0; ind < num / 2; ind++)
-        arr[ind] = new Dog();
-    for (int ind = num / 2; ind < num; ind++)
-        arr[ind] = new Cat();
-    std::cout << "-----------------------------------" << std::endl;
-    for (int ind = 0; ind < num; ind++)
-        arr[ind]->makeSound();
-    std::cout << "-----------------------------------" << std::endl;
-    arr[0]->printIdeas(5);
-    std::cout << "-----------------------------------" << std::endl;
-    arr[5]->printIdeas(5);
-    std::cout << "-----------------------------------" << std::endl;
-    for (int ind = 0; ind < num; ind++)
-        delete(arr[ind]);
-    delete[](arr);
+    //const Animal* meta = new Animal(); <- can't launch it as we can't create instance of abstract class
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    std::cout << std::endl;
+
+    std::cout << "Cat's type is " << j->getType() << " " << std::endl;
+    std::cout << "Dog's type is " << i->getType() << " " << std::endl;
+    std::cout << std::endl;
+
+    i->makeSound();
+    j->makeSound();
+    std::cout << std::endl;
+
+    delete(i);
+    delete(j);
     return (0);
 }
