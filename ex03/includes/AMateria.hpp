@@ -8,6 +8,7 @@
 class AMateria
 {
     protected:
+        std::string _type;
 
     public:
         AMateria(std::string const & type);
@@ -19,7 +20,6 @@ class AMateria
 
         virtual AMateria* clone(void) = 0;
         virtual void use(ICharacter& target);
-
 };
 
 #endif

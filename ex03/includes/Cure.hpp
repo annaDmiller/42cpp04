@@ -17,7 +17,6 @@ class Cure : public AMateria
 
         virtual Cure* clone(void);
         virtual void use(ICharacter& target);
-
 };
 
 #endif
