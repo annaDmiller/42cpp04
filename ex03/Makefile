@@ -2,9 +2,16 @@ CC = c++
 
 CC_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 
-NAME = 
+NAME = 	recap
 
-SOURCES =
+SOURCES =	./sources/main.cpp \
+			./sources/AMateria.cpp \
+			./sources/Character.cpp \
+			./sources/Cure.cpp \
+			./sources/Ice.cpp \
+			./sources/ICharacter.cpp \
+			./sources/IMateriaSource.cpp \
+			./sources/MateriaSource.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 

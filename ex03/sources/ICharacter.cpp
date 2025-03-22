@@ -7,6 +7,7 @@ ICharacter::ICharacter(void)
 
 ICharacter::ICharacter(const ICharacter& other)
 {
+    (void) other;
     return ;
 }
 
@@ -17,5 +18,6 @@ ICharacter::~ICharacter(void)
 
 ICharacter& ICharacter::operator=(const ICharacter& other)
 {
+    (void) other;
     return (*this);
 }

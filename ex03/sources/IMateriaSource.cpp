@@ -7,6 +7,7 @@ IMateriaSource::IMateriaSource(void)
 
 IMateriaSource::IMateriaSource(const IMateriaSource& other)
 {
+    (void) other;
     return ;
 }
 
@@ -17,5 +18,6 @@ IMateriaSource::~IMateriaSource(void)
 
 IMateriaSource& IMateriaSource::operator=(const IMateriaSource& other)
 {
+    (void) other;
     return (*this);
 }
