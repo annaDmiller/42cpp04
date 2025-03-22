@@ -6,7 +6,7 @@
 class MateriaSource : public IMateriaSource
 {
     private:
-        AMateria** materias;
+        AMateria** _materias;
 
     public:
         MateriaSource(void);

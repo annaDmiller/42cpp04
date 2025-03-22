@@ -7,10 +7,8 @@
 
 class Ice : public AMateria
 {
-    protected:
-
     public:
-        Ice(std::string const & type);
+        Ice(void);
         Ice(const Ice& other);
         virtual ~Ice(void);
         Ice &operator=(const Ice &other);

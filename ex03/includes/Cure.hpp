@@ -7,10 +7,8 @@
 
 class Cure : public AMateria
 {
-    protected:
-
     public:
-        Cure(std::string const & type);
+        Cure(void);
         Cure(const Cure& other);
         virtual ~Cure(void);
         Cure &operator=(const Cure &other);

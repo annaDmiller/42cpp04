@@ -1,6 +1,6 @@
 #include "../includes/Character.hpp"
 
-Character::Character(std::string const &name) : _name(name), _inventory(NULL)
+Character::Character(std::string const &name) : ICharacter(), _name(name), _inventory(NULL)
 {
     this->_inventory = new AMateria*[4];
     for (int ind = 0; ind < 4; ind++)
@@ -8,7 +8,7 @@ Character::Character(std::string const &name) : _name(name), _inventory(NULL)
     return ;
 }
 
-Character::Character(const Character& other) : _name(other._name), _inventory(NULL)
+Character::Character(const Character& other) : ICharacter(), _name(other._name), _inventory(NULL)
 {
     this->_inventory = new AMateria*[4];
     for (int ind = 0; ind < 4; ind++)
@@ -23,7 +23,7 @@ Character::Character(const Character& other) : _name(other._name), _inventory(NU
 Character::~Character(void)
 {
     for (int ind = 0; ind < 4; ind++)
-        this->unequip(ind);
+        delete(this->_inventory[ind]);
     delete[]this->_inventory;
     return ;
 }
@@ -36,6 +36,7 @@ Character& Character::operator=(const Character& other)
         {
             if (other._inventory[ind] == NULL)
                 break ;
+            delete(this->_inventory[ind]);
             (this->_inventory)[ind] = other._inventory[ind]->clone();
         }       
     }
