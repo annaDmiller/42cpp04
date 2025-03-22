@@ -12,7 +12,7 @@ class Character : public ICharacter
         AMateria** _inventory;
 
     public:
-        Character(std::string const *name);
+        Character(std::string const &name);
         Character(const Character& other);
         virtual ~Character(void);
         Character &operator=(const Character& other);
