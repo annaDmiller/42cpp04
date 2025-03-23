@@ -11,7 +11,7 @@ Dog::Dog(void) : Animal()
 Dog::Dog(const Dog& other) : Animal(other)
 {
     this->type = other.type;
-    this->brain = other.brain;
+    this->brain = new Brain(*other.brain);
     return ;
 }
 
@@ -27,8 +27,10 @@ Dog& Dog::operator=(const Dog& other)
     if (this != &other)
     {
         this->type = other.type;
-        this->brain = other.brain;
-    }
+        if (this->brain)
+            delete (this->brain);
+        this->brain = new Brain(*other.brain);
+        }
     return (*this);
 }
 

@@ -25,18 +25,7 @@ Animal& Animal::operator=(const Animal& other)
     return (*this);
 }
 
-void Animal::makeSound(void) const
-{
-    return ;
-}
-
 std::string Animal::getType(void) const
 {
     return (this->type);
-}
-
-void Animal::printIdeas(int quantity) const
-{
-    quantity = quantity;
-    return ;
 }
